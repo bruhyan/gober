@@ -15,11 +15,18 @@ Run container
 docker run --publish 8080:8080 gober
 ```
 
+To start all services via `docker-compose`:
+```
+docker-compose up --build
+```
+
 #### Local development
-Just run `go run cmd/gober/main.go` or `make dev`
+
+To start the server only locally
+`go run cmd/gober/main.go` or `make dev`
 
 
-### Setting up OSRM
+#### Setting up OSRM
 This project uses [OSRM](https://project-osrm.org/) for routing functionality.
 
 1) Pre-process the Singapore data extract

@@ -12,9 +12,12 @@ import (
 
 func main() {
 	err := godotenv.Load()
+
 	if err != nil {
-		log.Fatal("Error loading .env file", err)
+		// not fatal as will err in docker-compose even though .env is loaded
+		log.Println(".env file not found — assuming env vars are set externally")
 	}
+
 	fmt.Println("Running Gober in " + os.Getenv("APP_ENV") + " environment")
 
 	router := gin.Default()
