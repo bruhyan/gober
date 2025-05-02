@@ -8,3 +8,7 @@ docker-build:
 docker-run:
 	@echo "Running Docker container..."
 	docker run --publish 8080:8080 gober
+
+dev:
+	@echo "Running Gober locally..."
+	go run cmd/gober/main.go

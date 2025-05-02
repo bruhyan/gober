@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	fare "github.com/bruhyan/gober/internal/handlers"
+	"github.com/bruhyan/gober/internal/handlers"
 )
 
 func RegisterRoutes(router *gin.Engine) {
@@ -17,5 +17,5 @@ func RegisterRoutes(router *gin.Engine) {
 		})
 	})
 
-	api.POST("/fare", fare.GetFare)
+	api.POST("/fare", handlers.GetFare)
 }

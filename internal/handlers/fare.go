@@ -1,9 +1,10 @@
-package fare
+package handlers
 
 import (
 	"fmt"
 	"net/http"
 
+	"github.com/bruhyan/gober/internal/models"
 	"github.com/gin-gonic/gin"
 )
 
@@ -11,14 +12,9 @@ type Fare struct {
 	Price float64 `json:"price"`
 }
 
-type Location struct {
-	Lat float64 `json:"lat"`
-	Lng float64 `json:"lng"`
-}
-
 type FareRequest struct {
-	Start       Location `json:"start"`
-	Destination Location `json:"destination"`
+	Start       models.Location `json:"start"`
+	Destination models.Location `json:"destination"`
 }
 
 func GetFare(c *gin.Context) {

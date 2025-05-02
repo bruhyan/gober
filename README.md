@@ -1,4 +1,5 @@
 ### Setting up Gober
+#### With Docker
 Build docker image
 ```
 docker build --tag gober .
@@ -14,8 +15,13 @@ Run container
 docker run --publish 8080:8080 gober
 ```
 
+#### Local development
+Just run `go run cmd/gober/main.go` or `make dev`
+
 
 ### Setting up OSRM
+This project uses [OSRM](https://project-osrm.org/) for routing functionality.
+
 1) Pre-process the Singapore data extract
 ```
 docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-extract -p /opt/car.lua /data/Singapore.osm.pbf
