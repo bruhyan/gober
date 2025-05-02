@@ -17,5 +17,10 @@ func RegisterRoutes(router *gin.Engine) {
 		})
 	})
 
+	// user
+	api.POST("/user", handlers.CreateUser)
+
+	// fare
 	api.POST("/fare", handlers.GetFare)
+
 }
